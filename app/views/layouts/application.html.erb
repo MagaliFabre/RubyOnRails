@@ -20,22 +20,35 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-      <a class="navbar-brand"class="site-title" href="#">Move and Groove</a>
+      <a class="site-title" href="#">Move and Groove</a>
       <div class="navbar-content">
       </div>
       <ul>
         <li><%= link_to 'Home', root_path %></li>
-        <li><%= link_to 'About', root_path %></li>
+        <li><%= link_to 'Dashboard', activities_path %></li>
         <!-- navigation links later -->
       </ul>
-      <div class="user-actions">
-        <% if user_signed_in? %> 
-          <div>Welcome <%= current_user.email %></div> <%= current_user.id %>
-          <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: 'sign-out-btn' %> 
-        <% else %>
-          <%= button_to "Sign in", new_user_session_path, class: 'sign-in-btn' %> 
-        <% end %>
+   <!-- ... (votre code existant) ... -->
+
+<div class="user-actions">
+  <% if user_signed_in? %>
+    <div class="user-dropdown">
+      <button class="user-dropdown-btn">
+        Welcome <%= current_user.email %>
+        <span>&#9662;</span> <!-- Flèche vers le bas pour indiquer un menu déroulant -->
+      </button>
+      <div class="user-dropdown-content">
+        <%= link_to 'Profile', edit_user_registration_path, class: 'dropdown-link' %>
+        <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'sign-out-btn' %>
       </div>
+    </div>
+  <% else %>
+    <%= button_to 'Sign in', new_user_session_path, class: 'sign-in-btn' %>
+  <% end %>
+</div>
+
+<!-- ... (le reste de votre code) ... -->
+
     </div>
     </div>
   </nav>

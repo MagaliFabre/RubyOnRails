@@ -1,9 +1,25 @@
-<h1><%= @activity.name %></h1>
-<p>Date: <%= @activity.date %></p>
-<p>Duration: <%= @activity.duration %> minutes</p>
-<p>Comments: <%= @activity.comments %></p>
-<%= turbo_include_tags %>
-<%= link_to "Delete this review", @review, data: { 'method': :delete, 'confirm': "Are you sure?" } %>
-<%= link_to 'Delete Activity', custom_delete_activity_path(@activity), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+<!-- app/views/activities/show.html.erb -->
+<h1 class="activitytitle"><%= @activity.name %></h1>
+<table class="activity-table">
+  <tr>
+    <td>Date:</td>
+    <td><%= @activity.date %></td>
+  </tr>
+  <tr>
+    <td>Duration:</td>
+    <td><%= @activity.duration %> minutes</td>
+  </tr>
+  <tr>
+    <td>Comments:</td>
+    <td><%= @activity.comments %></td>
+  </tr>
+  <tr>
+    <td><%= link_to 'Back to Activities', activities_path, class: 'btn-primary' %>
+</td>
+    <td><%= link_to 'Delete Activity', custom_delete_activity_path(@activity), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-secondary' %>
+</td>
+    </tr>
+</table>
 
-<%= link_to 'Back to Activities', activities_path %>
+<%= turbo_include_tags %>
+

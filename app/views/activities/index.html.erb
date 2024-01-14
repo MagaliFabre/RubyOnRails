@@ -3,7 +3,7 @@
 <h1 class="activitytitle">Activities</h1>
 
 <section>
-  <h2>Select an Activity</h2>
+  <h2 class="activitytitleh2">Select an Activity</h2>
   <table class="activity-table">
     <tr>
       <td class="activity-cell">
@@ -77,20 +77,19 @@
   </table>
 
   <!-- Tableau pour afficher les activités existantes -->
-  <h2>Existing Activities</h2>
+  <h2 class="activitytitleh2">Existing Activities</h2>
   <table class="activity-table">
-    <thead>
-      <tr>
-        <th>Activity Name</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
+   
     <tbody>
       <% @activities.each do |activity| %>
         <tr>
-          <td><%= link_to activity.name, activity_path(activity) %></td>
+          <td><%= link_to activity.name, activity_path(activity), class: 'link' %></td>
+<td>
+  <%= link_to 'Modifier', edit_activity_path(activity), class: 'link' %>
+</td>
+
           <td>
-            <%= link_to 'Modifier', edit_activity_path(activity) %>
+            <%= link_to image_tag('delete_icon.png', width: 20, height: 20), custom_delete_activity_path(activity), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-icon' %>
           </td>
         </tr>
       <% end %>

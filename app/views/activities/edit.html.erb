@@ -23,6 +23,8 @@
       <%= form.text_area :comments, class: 'form-control' %>
     </div>
 
-    <%= form.submit 'Update Activity', class: 'btn btn-primary' %>
+    <%= form.submit 'Update Activity', class: 'btn-primary' %>
+    <%= link_to 'Delete Activity', custom_delete_activity_path(@activity), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-secondary' %>
+
   <% end %>
 </div>
