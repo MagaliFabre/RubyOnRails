@@ -1,7 +1,47 @@
-<% if user_signed_in? %> 
- <div> Welcome <%= current_user.email %> </div> 
-  <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
-<% else %>
-  <%= button_to "Sign in", new_user_session_path %> 
-<% end %>
-<h1>Hello DigitalOcean!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness Tracker</title>
+  <%= stylesheet_link_tag 'home', media: 'all' %>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy3vZNU2R9i6pAegIS0MpgJj5b25L" crossorigin="anonymous">
+</head>
+<body>
+  
+  <header class="jumbotron text-center">
+    <h1 class="display-4">Achieve Your Fitness Goals</h1>
+    <p class="lead">Track your activities and stay motivated on your fitness journey.</p>
+  </header>
+ </div>
+ <body>
+  <body class="home">
+  <div class="container">
+    <div class="content">
+      <div class="left-box">
+        <h2>Bienvenue sur Votre Application</h2>
+        <p>Une application pour suivre et enregistrer vos activités sportives.</p>
+        <%= image_tag('home1.png')  %>
+        <%= image_tag('home2.jpg')  %>
+        
+      </div>
+      <div class="right-box">
+        <p>Start to select an activity</p>
+        <%= link_to "Show activities", activities_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</body>
+  </body>
+  <footer>
+    <p>&copy; 2023 Fitness Tracker</p>
+  </footer>
+
+  <!-- Link Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-eMNCO9rFof7gtm5ofqWWqO/47jRbdN5S02G3J5k4JzIS7PVOz2zKgO1pExXxhqb" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy3vZNU2R9i6pAegIS0MpgJj5b25L"
+
+crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<div class="activity-form">
+  <h2>Edit <%= @activity.name %> Activity</h2>
+  <%= form_for @activity, url: activity_path(@activity), method: :patch do |form| %>
+    <%= form.hidden_field :user_id %>
+
+    <div class="form-group">
+      <%= form.label :name, class: 'form-label' %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :date, class: 'form-label' %>
+      <%= form.date_field :date, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :duration, class: 'form-label' %>
+      <%= form.number_field :duration, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :comments, class: 'form-label' %>
+      <%= form.text_area :comments, class: 'form-control' %>
+    </div>
+
+    <%= form.submit 'Update Activity', class: 'btn btn-primary' %>
+  <% end %>
+</div>

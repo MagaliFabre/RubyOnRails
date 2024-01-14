@@ -1,0 +1,9 @@
+<h1><%= @activity.name %></h1>
+<p>Date: <%= @activity.date %></p>
+<p>Duration: <%= @activity.duration %> minutes</p>
+<p>Comments: <%= @activity.comments %></p>
+<%= turbo_include_tags %>
+<%= link_to "Delete this review", @review, data: { 'method': :delete, 'confirm': "Are you sure?" } %>
+<%= link_to 'Delete Activity', custom_delete_activity_path(@activity), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+
+<%= link_to 'Back to Activities', activities_path %>

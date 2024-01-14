@@ -17,9 +17,6 @@ gem "puma", ">= 5.0"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 
-# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails"
-
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
@@ -28,6 +25,14 @@ gem "jbuilder"
 
 #css dependency
 gem "cssbundling-rails"
+
+#jquery rails
+gem 'jquery-rails', '~> 4.4'
+
+# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+#turbo rails
+gem 'turbo-rails', '~> 1.5'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"

@@ -1,0 +1,9 @@
+=> 
+[32m#<Activity:0x0000564c17127578[0m
+ id: [34m[1m1[0m,
+ user_id: [36m[1mnil[0m,
+ name: [31m[1m"[0m[31mswimming[0m[31m[1m"[0m,
+ date: [36m[1mnil[0m,
+ comments: [36m[1mnil[0m,
+ created_at: Sat, 23 Dec 2023 14:54:52.778570000 UTC +00:00,
+ updated_at: Sat, 23 Dec 2023 14:54:52.778570000 UTC +00:00[32m>[0m

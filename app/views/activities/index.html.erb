@@ -1,0 +1,99 @@
+<!-- app/views/activities/index.html.erb -->
+
+<h1 class="activitytitle">Activities</h1>
+
+<section>
+  <h2>Select an Activity</h2>
+  <table class="activity-table">
+    <tr>
+      <td class="activity-cell">
+        <% swimming_activity = Activity.find_by(name: 'swimming') %>
+        <% if swimming_activity %>
+          <%= link_to create_activity_path(activity_name: 'swimming') do %>
+            <%= image_tag('swimming.svg', width: 100, height: 100) %>
+            <span class="activity-title">Swimming</span>
+          <% end %>
+        <% else %>
+          <p>Activity not found</p>
+        <% end %>
+      </td>
+      <td class="activity-cell">
+        <%= link_to new_activity_path(activity_name: :running) do %>
+          <%= image_tag('running.svg', width: 100, height: 100) %>
+          <span class="activity-title">Running</span>
+        <% end %>
+      </td>
+      <td class="activity-cell">
+        <%= link_to new_activity_path(activity_name: :walking) do %>
+          <%= image_tag('walking.svg', width: 50, height: 100) %>
+          <span class="activity-title">Walking</span>
+        <% end %>
+      </td>
+      <td class="activity-cell">
+        <%= link_to new_activity_path(activity_name: :cycling) do %>
+          <%= image_tag('cycling.svg', width: 100, height: 100) %>
+          <span class="activity-title">Cycling</span>
+        <% end %>
+      </td>
+      <td class="activity-cell">
+        <%= link_to new_activity_path(activity_name: :weight_lifting) do %>
+          <%= image_tag('weightlifting.svg', width: 100, height: 100) %>
+          <span class="activity-title">Weight Lifting</span>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td class="activity-cell">
+        <%= link_to new_activity_path(activity_name: :yoga) do %>
+          <%= image_tag('yoga.svg', width: 100, height: 100) %>
+          <span class="activity-title">Yoga</span>
+        <% end %>
+      </td>
+      <td class="activity-cell">
+        <%= link_to new_activity_path(activity_name: :pilates) do %>
+          <%= image_tag('pilates.svg', width: 100, height: 100) %>
+          <span class="activity-title">Pilates</span>
+        <% end %>
+      </td>
+      <td class="activity-cell">
+        <%= link_to new_activity_path(activity_name: :hiking) do %>
+          <%= image_tag('hiking.svg', width: 100, height: 100) %>
+          <span class="activity-title">Hiking</span>
+        <% end %>
+      </td>
+      <td class="activity-cell">
+        <%= link_to new_activity_path(activity_name: :boxing) do %>
+          <%= image_tag('boxing.svg', width: 100, height: 100) %>
+          <span class="activity-title">Boxing</span>
+        <% end %>
+      </td>
+      <td class="activity-cell">
+        <%= link_to new_activity_path(activity_name: :golf) do %>
+          <%= image_tag('golf.svg', width: 100, height: 100) %>
+          <span class="activity-title">Golf</span>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Tableau pour afficher les activités existantes -->
+  <h2>Existing Activities</h2>
+  <table class="activity-table">
+    <thead>
+      <tr>
+        <th>Activity Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @activities.each do |activity| %>
+        <tr>
+          <td><%= link_to activity.name, activity_path(activity) %></td>
+          <td>
+            <%= link_to 'Modifier', edit_activity_path(activity) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
