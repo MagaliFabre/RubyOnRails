@@ -95,9 +95,9 @@
         <% @activities.each do |activity| %>
           <tr>
             <td><%= link_to activity.name, activity_path(activity), class: 'link' %></td>
-            <td><%= link_to 'Modify', edit_activity_path(activity), class: 'link' %></td>
             <td><%= link_to activity.date, activity_path(activity), class: 'link' %></td>
             <td><%= link_to activity.comments, activity_path(activity), class: 'link' %></td>
+            <td><%= link_to 'Modify', edit_activity_path(activity), class: 'link' %></td>
             <td>
               <%= link_to image_tag('delete_icon.png', width: 20, height: 20),
                           custom_delete_activity_path(activity),
@@ -132,7 +132,6 @@
 
   .link {
     text-decoration: none;
-    color: #3498db;
   }
 
   .delete-icon {

@@ -19,7 +19,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_13_233103) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "duration"
-    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
