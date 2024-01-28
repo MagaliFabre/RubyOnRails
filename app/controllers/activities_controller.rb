@@ -13,7 +13,7 @@ class ActivitiesController < ApplicationController
 
   def new
     # Logique pour la création d'une activité
-    puts "Current User: #{current_user.inspect}" # Add this line for debugging
+    puts "Current User: #{current_user.inspect}" 
     @activity = current_user.activities.build
     @activity.name = params[:activity_name]
   end

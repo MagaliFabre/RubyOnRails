@@ -1,8 +1,159 @@
+/* Home page section */
+
+.responsive-image {
+  max-width: 60%;
+  height: auto;
+  justify-content: center;
+
+@media (max-width: 768px) {
+  max-width: 100%;
+}
+}
+
+
+.select-activity-section,
+.image-section {
+  margin-bottom: 40px;
+  padding: auto;
+}
+.about-section {
+  padding: 40px;
+}
+
+.select-activity-section {
+  background: linear-gradient(to right, #ad7038, #666); 
+  padding: 40px; 
+  text-align: center; 
+}
+
+.select-activity-section h2 {
+  color: white; 
+}
+
+.select-activity-section .btn {
+  display: inline-block;
+  padding: 15px 30px; 
+  font-size: 20px; 
+  text-align: center;
+  text-decoration: none;
+  background-color: #fff; 
+  color: #666; 
+  border-radius: 10px; 
+  transition: background-color 0.3s;
+}
+
+.select-activity-section .btn:hover {
+  background-color: #ad7038; 
+  color: white; 
+}
+
+.third-picture-section-img {
+width: 400px;
+height: 600px;
+align-items: center;
+}
 /* Navbar styles */
 .navbar {
   background-color: #333;
   color: #fff;
-  padding: 1em;
+}
+
+.navbar-brand-img {
+  height: 50px; 
+  width: auto; 
+}
+
+.container-lg {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+.site-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ad4d0e;
+  text-decoration: none;
+  margin-right: auto; 
+}
+
+.navbar-toggler {
+  order: -1; 
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+.navbar-nav .nav-link {
+  font-weight: bold;
+}
+
+/* Réduire la marge des liens dans le menu déroulant */
+.navbar-nav .nav-item {
+  margin-right: 10px;
+}
+
+/* Ajustements pour le menu déroulant */
+.user-dropdown-btn {
+  background-color: #ad7038;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.user-dropdown-content {
+  min-width: 160px;
+}
+
+/* User actions styles */
+.user-actions {
+  display: flex;
+  align-items: center;
+  color: #ad7038;
+}
+
+.user-actions div {
+  margin-right: 10px;
+}
+
+.sign-in-btn, .sign-out-btn {
+  margin-right: 10px;
+}
+
+/* Media Query pour une meilleure réactivité */
+@media (max-width: 991px) {
+  .container-lg {
+    padding: 0 15px; 
+  }
+
+  .navbar-toggler {
+    margin-right: 15px; 
+    margin-left: 15px; 
+  }
+
+  .navbar-nav .nav-item {
+    margin-right: 0; 
+  
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-nav {
+    flex-direction: column;
+  }
+
+  .navbar-nav .nav-item {
+    margin-right: 0;
+    margin-bottom: 10px; 
+  }
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #333;
+  color: #fff;
   width: 100%;
 }
 
@@ -13,8 +164,9 @@
 
 .container {
   display: flex;
-  justify-content: space-between;
+ justify-content: end;
   align-items: center;
+  
 }
 
 .navbar-brand {
@@ -25,9 +177,9 @@
 }
 
 .site-title {
-  font-size: 24px; /* Taille de police plus grande */
-  font-weight: bold; /* Texte en gras */
-  color: #ad4d0e; /* Couleur orange plus foncée */
+  font-size: 24px; 
+  font-weight: bold; 
+  color: #ad4d0e; 
   text-decoration: none;
 }
 
@@ -36,13 +188,20 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 20px; /* Espacement entre les liens de navigation */
 }
 
 nav ul li a {
   text-decoration: none;
   color: #fff;
-  font-weight: bold; /* Texte en gras */
+  font-weight: bold; 
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+.navbar-nav .nav-link {
+  font-weight: bold;
 }
 
 /* Social Icons in Footer */
@@ -284,37 +443,45 @@ footer {
 }
 
 .user-actions div {
-  margin-right: 10px; /* Espacement entre "Welcome" et le bouton "Sign In" */
+  margin-right: 10px; 
 }
 
 .sign-in-btn, .sign-out-btn {
   margin-right: 10px;
 }
 
-/* Ajoutez ces styles après le style existant pour les boutons */
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  text-align: center;
-  text-decoration: none;
-  background-color: #ad7038; /* Couleur orange */
-  color: white; /* Couleur du texte du bouton */
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
+.btn,
+  .btn-primary {
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    transition: all 0.1s ease-in-out;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s;
+    background-color: #d25b10;
+    color: #ffffff;
+  }
 
-.btn:hover {
-  background-color: #666; /* Couleur gris foncé au survol */
-}
+  .btn:hover,
+  .btn-primary:hover {
+    box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.5);
+    transform: translateY(-3px);
+    background-color: #666; 
+  }
+
 
 .btn.btn-secondary {
-  background-color: #666; /* Couleur gris foncé pour le bouton "Back to Activities" */
-  color: white; /* Couleur du texte du bouton */
+  background-color: #666; 
+  color: white; 
 }
 
 .btn.btn-secondary:hover {
-  background-color: #555; /* Couleur gris un peu plus foncé au survol */
+  background-color: #555; 
 }
 
 
@@ -325,11 +492,19 @@ footer {
 }
 
 .user-dropdown-btn {
-  background-color: #ad7038;
-  color: white;
-  padding: 10px;
+  border-radius: 25px;
   border: none;
   cursor: pointer;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  transition: all 0.1s ease-in-out;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s;
+  background-color: #ad7038;
+  color: #ffffff;
 }
 
 .user-dropdown-content {
@@ -338,7 +513,7 @@ footer {
   background-color: #f9f9f9;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  min-width: 160px; /* Ajustez la largeur minimale du menu déroulant */
+  min-width: 160px; 
 }
 
 .user-dropdown-content a, .user-dropdown-content button {
@@ -346,7 +521,7 @@ footer {
   padding: 10px;
   text-decoration: none;
   display: block;
-  white-space: nowrap; /* Empêche le texte de passer à la ligne */
+  white-space: nowrap; 
 }
 
 
@@ -405,8 +580,6 @@ nav ul li a {
   color: #262525;
 }
 
-/*activities*/
-/* app/assets/stylesheets/activities.css.scss */
 
 /* activity */
 
@@ -482,7 +655,6 @@ margin-right: 2rem;
   transition: background-color 0.3s;
 }
 
-
 /*Table activities*/
 
 .activity-table {
@@ -495,6 +667,86 @@ margin-right: 2rem;
   max-width: 700px; /* Définition de la largeur maximale du formulaire */
   width: 100%; /* Largeur maximale du formulaire en pourcentage */
 }
+
+/* Your existing code */
+
+/* Additional styles for responsive layout */
+@media only screen and (max-width: 600px) {
+  .activity-table {
+    display: block;
+    width: 100%;
+  }
+
+  .activity-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .activity-cell {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+}
+{
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #f6f5f7;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    
+    margin-bottom: 50px;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .responsive-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  .responsive-table th, .responsive-table td {
+    text-align: left;
+    padding: 15px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .activity-image {
+    max-width: 100px;
+    max-height: 100px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .link {
+    text-decoration:none;
+    color: #26272b;
+    
+  }
+
+  .delete-icon {
+    cursor: pointer;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .responsive-table th, .responsive-table td {
+      display: block;
+      text-align: left;
+    }
+
+    .responsive-table tr {
+      display: block;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+    }
+  }
 /* Ajoutez ces styles après le style existant pour les boutons */
 
 .activity-table th,
@@ -508,9 +760,7 @@ margin-right: 2rem;
    /* Supprime le souligné */
 }
 
-.link {
-color: inherit
-}
+
 
 .activity-table a:hover {
   text-decoration: none; /* Supprime le souligné au survol */
@@ -559,7 +809,7 @@ color: inherit
 
 .activitytitleh2 {
   color: rgb(172, 89, 59);
-  text-align: left;
+  text-align: center;
   padding: 20px;
 }
 
@@ -623,11 +873,6 @@ header {
   padding: 1em;
 }
 
-section {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 0 20px;
-}
 
 /* Media Query for Mobile Devices */
 @media only screen and (max-width: 768px) {
@@ -650,6 +895,14 @@ section {
 
   nav ul li {
     margin: 10px 0;
+  }
+
+  .jumbotron p.lead {
+    font-size: 1rem;
+  }
+
+  .navbar-nav {
+    margin-right: auto;
   }
 }
 

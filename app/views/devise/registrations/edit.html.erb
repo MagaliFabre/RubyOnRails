@@ -66,8 +66,9 @@
 <h2>Cancel my account</h2>
 
 <div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
-
-<%= link_to "Back", root_path %>
+<div>
+<%= button_to "Back", root_path, class:'btn_primary' %>
+</div>
 </div>
 </body>
 

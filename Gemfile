@@ -33,6 +33,9 @@ gem 'jquery-rails', '~> 4.4'
 #turbo rails
 gem 'turbo-rails', '~> 1.5'
 
+# gem 'syntax_tree'
+gem 'syntax_tree'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"

@@ -1,44 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fitness Tracker</title>
-  <%= stylesheet_link_tag 'home', media: 'all' %>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy3vZNU2R9i6pAegIS0MpgJj5b25L" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker</title>
+    <%= stylesheet_link_tag 'home', media: 'all' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy3vZNU2R9i6pAegIS0MpgJj5b25L"
+        crossorigin="anonymous">
 </head>
+
 <body>
-  
-  <header class="jumbotron text-center">
-    <h1 class="display-4">Achieve Your Fitness Goals</h1>
-    <p class="lead">Track your activities and stay motivated on your fitness journey.</p>
-  </header>
- </div>
- <body>
-  <body class="home">
-  <div class="container">
-    <div class="content">
-      <div class="left-box">
-        <h2>Bienvenue sur Votre Application</h2>
-        <p>Une application pour suivre et enregistrer vos activités sportives.</p>
-        <%= image_tag('home1.png')  %>
-        <%= image_tag('home2.jpg')  %>
-        
-      </div>
-      <div class="right-box">
-        <h2 class='activitytitle'>Start to select an activity</h2>
-        <%= link_to "Show activities", activities_path, class: "btn-secondary" %>
-      </div>
+    <header class="jumbotron text-center">
+        <h1 class="display-4">Achieve Your Fitness Goals</h1>
+        <p class="lead">Track your activities and stay motivated on your fitness journey.</p>
+    </header>
+    <div class="container">
+        <section class="about-section text-center">
+            <h2 class='activitytitle'>What is Move and Groove ? </h2>
+            <p>Seamlessly blending technology with health, our user-friendly platform empowers you to effortlessly log
+                and track your physical activities. With a secure authentication system, personalized activity logging,
+                and a sleek design, Move and Groove is your passport to a healthier lifestyle. Sign up now and embark on
+                a fitness journey that's as unique as you are. Let's move and groove together towards a fitter,
+                happier you! 💪🏃‍♀️ #MoveAndGroove #FitnessCompanion</p>
+            <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+        </section>
     </div>
-  </div>
-  </body>
-  </body>
 
-  <!-- Link Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-eMNCO9rFof7gtm5ofqWWqO/47jRbdN5S02G3J5k4JzIS7PVOz2zKgO1pExXxhqb" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy3vZNU2R9i6pAegIS0MpgJj5b25L"
+    <div class="select-activity-section">
+        <h2 class='activitytitle'>Start to select an activity</h2>
+        <%= link_to "DASHBOARD", activities_path, class: "btn-secondary" %>
+    </div>
 
-crossorigin="anonymous"></script>
+   <div class="third-picture-section text-center">
+  <%= image_tag('home1.png', class: 'responsive-image') %>
+  <!-- Content for the third section -->
+</div>
+
+
+    <!-- Link Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-eMNCO9rFof7gtm5ofqWWqO/47jRbdN5S02G3J5k4JzIS7PVOz2zKgO1pExXxhqb"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy3vZNU2R9i6pAegIS0MpgJj5b25L"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

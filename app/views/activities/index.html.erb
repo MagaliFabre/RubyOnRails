@@ -1,10 +1,8 @@
-<!-- app/views/activities/index.html.erb -->
-
 <h1 class="activitytitle">Activities</h1>
 
 <section>
   <h2 class="activitytitleh2">Select an Activity</h2>
-  <table class="activity-table">
+  <table class="activity-table" class="responsive-table">
     <tr>
       <td class="activity-cell">
         <% swimming_activity = Activity.find_by(name: 'swimming') %>
@@ -76,23 +74,68 @@
     </tr>
   </table>
 
+<section>
+  <!-- ... Your existing code ... -->
+
   <!-- Tableau pour afficher les activités existantes -->
   <h2 class="activitytitleh2">Existing Activities</h2>
-  <table class="activity-table">
-   
-    <tbody>
-      <% @activities.each do |activity| %>
-        <tr>
-          <td><%= link_to activity.name, activity_path(activity), class: 'link' %></td>
-<td>
-  <%= link_to 'Modifier', edit_activity_path(activity), class: 'link' %>
-</td>
 
-          <td>
-            <%= link_to image_tag('delete_icon.png', width: 20, height: 20), custom_delete_activity_path(activity), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-icon' %>
-          </td>
+  <div class="table-container">
+    <table class="activity-table">
+      <thead>
+        <tr>
+          <th>Activity Name</th>
+          <th>Modify</th>
+          <th>Date</th>
+          <th>Comment</th>
+          <th>Delete</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% @activities.each do |activity| %>
+          <tr>
+            <td><%= link_to activity.name, activity_path(activity), class: 'link' %></td>
+            <td><%= link_to 'Modify', edit_activity_path(activity), class: 'link' %></td>
+            <td><%= link_to activity.date, activity_path(activity), class: 'link' %></td>
+            <td><%= link_to activity.comments, activity_path(activity), class: 'link' %></td>
+            <td>
+              <%= link_to image_tag('delete_icon.png', width: 20, height: 20),
+                          custom_delete_activity_path(activity),
+                          method: :delete,
+                          data: { confirm: 'Are you sure?' },
+                          class: 'delete-icon' %>
+            </td>
+
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </section>
+
+<style>
+  .table-container {
+    overflow-x: auto;
+  }
+
+  .activity-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  .activity-table th, .activity-table td {
+    text-align: left;
+    padding: 15px;
+    border: 1px solid #ddd;
+  }
+
+  .link {
+    text-decoration: none;
+    color: #3498db;
+  }
+
+  .delete-icon {
+    cursor: pointer;
+  }
+</style>
