@@ -688,10 +688,7 @@ margin-right: 2rem;
     padding: 10px;
   }
 }
-{
-    box-sizing: border-box;
-  }
-
+  
   body {
     background-color: #f6f5f7;
     font-family: 'Open Sans', sans-serif;
@@ -775,10 +772,6 @@ margin-right: 2rem;
   border-radius: 50%;
   line-height: 20px;
   cursor: pointer;
-}
-
-.delete-icon:hover {
-  
 }
 
 .activity-table td {
