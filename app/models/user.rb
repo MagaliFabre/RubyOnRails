@@ -6,4 +6,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          attr_accessor :first_name, :last_name, :date_of_birth, :email, :password, :password_confirmation, :remember_me
   has_many :activities
+  has_one :profile
 end

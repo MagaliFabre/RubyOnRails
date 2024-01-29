@@ -3,3 +3,4 @@ class Activity < ApplicationRecord
     belongs_to :user
   end
   
+  max@wardeh.org
