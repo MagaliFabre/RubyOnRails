@@ -589,13 +589,15 @@ margin-right: 2rem;
 }
 
 /* form */
+
 .activity-form {
-  margin: 50px auto; /* Ajout de margin pour centrer le formulaire */
+  margin: 50px auto; 
   padding: 20px;
   border: 1px solid #ddd;
-  max-width: 700px; /* Définition de la largeur maximale du formulaire */
-  width: 100%; /* Largeur maximale du formulaire en pourcentage */
-  box-sizing: border-box; /* Inclure la bordure et le padding dans la largeur totale */
+  max-width: 700px; 
+  width: 100%; 
+  box-sizing: border-box; 
+  background-color: #fcf5eb;
 }
 
 .form-label {
@@ -725,7 +727,6 @@ margin-right: 2rem;
   .link {
     text-decoration:none;
     color: #26272b;
-    
   }
 
   .delete-icon {

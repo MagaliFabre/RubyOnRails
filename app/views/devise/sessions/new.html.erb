@@ -1,22 +1,36 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness Tracker</title>
+  <%= stylesheet_link_tag 'home', media: 'all' %>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy3vZNU2R9i6pAegIS0MpgJj5b25L" crossorigin="anonymous">
+</head>
+
+<div class="activity-form">
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+ <div class="form-group">
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :email, class: 'form-label' %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+  </div>
   </div>
 
+<div class="form-group">
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.label :password, class: 'form-label'%><br />
+    <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
   </div>
-
+</div>
+<div class="form-group">
   <% if devise_mapping.rememberable? %>
     <div class="field">
       <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.label :remember_me, class: 'form-label' %>
     </div>
   <% end %>
+</div>
 
   <div class="actions">
     <%= f.submit "Log in" %>
@@ -24,3 +38,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
