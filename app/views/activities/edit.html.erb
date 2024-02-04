@@ -1,16 +1,16 @@
 <div class="activity-form">
   <h2>Edit <%= @activity.name %> Activity</h2>
   <%= form_for @activity, url: activity_path(@activity), method: :patch do |form| %>
-    <%= form.hidden_field :user_id %>
+    <%= form.hidden_field :userid %>
 
     <div class="form-group">
       <%= form.label :name, class: 'form-label' %>
       <%= form.text_field :name, class: 'form-control' %>
     </div>
 
-    <div class="form-group">
-      <%= form.label :date, class: 'form-label' %>
-      <%= form.date_field :date, class: 'form-control' %>
+   <div class="form-group">
+      <%= form.label :date_and_time, class: 'form-label' %>
+      <%= form.datetime_select :date_and_time, class: 'form-control' %>
     </div>
 
     <div class="form-group">

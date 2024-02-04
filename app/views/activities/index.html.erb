@@ -74,7 +74,7 @@
       <thead>
         <tr>
           <th>Activity Name</th>
-          <th>Date</th>
+          <th>Date and Time</th>
           <th>Comments</th>
           <th>Modify</th>
           <th>Delete</th>
@@ -83,8 +83,8 @@
       <tbody>
         <% @activities.each do |activity| %>
           <tr>
-            <td><%= link_to activity.name, activity_path(activity), class: 'link' %></td>
-            <td><%= link_to activity.date, activity_path(activity), class: 'link' %></td>
+            <td><%= link_to activity.name, activity_path(activity), class: 'linktitle' %></td>
+            <td class = link><%= link_to activity.date_and_time.strftime('%Y-%m-%d %H:%M:%S') if activity.date_and_time%></td>
             <td><%= link_to activity.comments, activity_path(activity), class: 'link' %></td>
             <td><%= link_to 'Modify', edit_activity_path(activity), class: 'link' %></td>
             <td>
@@ -108,7 +108,11 @@
     padding-bottom: 20px; /* Add space below the table */
     max-width: 600px; /* Adjust max-width as needed */
   }
-
+  .linktitle {
+    text-decoration:none;
+    color: #26272b;
+    font-weight: bold;
+  }
   .activity-table2 {
     border: 1px solid #ddd;
     border-collapse: collapse;
@@ -141,15 +145,26 @@
     text-transform: uppercase;
     background-color:#ddd;
     color:#ad4d0e;
-    width: 100px; 
+    width: fit; 
+    height: 50px;
+  }
+
+  .activity-table th:first-child,
+  .activity-table td:first-child {
+    width: 100px;
   }
 
   @media screen and (max-width: 600px) {
-
+ .table-container {
+    overflow-x: auto;
+    margin: 20px 20px; /* Adjust margin as needed */
+    padding-bottom: 20px; /* Add space below the table */
+    max-width: 600px; /* Adjust max-width as needed */
+  }
 
     .activity-table th,
     .activity-table td {
-      padding: 10px; /* Adjust cell padding */
+      padding: 10px; 
     }
 
     .activity-cell {
@@ -172,7 +187,7 @@
       height: 1px;
       margin: -1px;
       overflow: hidden;
-      padding: 0;
+      padding: 10;
       position: absolute;
       width: 1px;
       color: dark;
@@ -188,7 +203,7 @@
       border-bottom: 1px solid #ddd;
       display: block;
       font-size: .8em;
-      text-align: right;
+      text-align: left;
     }
 
     .activity-table2 td::before {

@@ -1,13 +1,25 @@
-
 <div class="activity-form">
-  <h2>Create a New <%= @activity.name %> Activity</h2>
-  <%= form_for @activity, url: activities_path do |form| %>
-    <%= form.hidden_field :user_id %>
-    <%= form.text_field :name, readonly: true, class: 'form-control' %>
+
+
+
+  <h2>Create a new <%= @activity.name %> activity</h2>
+ <%= form_with(model: @activity, data: { turbo_frame: 'new_activity' }) do |form| %>
+
+
+  <%= form.hidden_field :userid %>
+
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :name, class: 'form-label' %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+  </div>
 
     <div class="form-group">
-      <%= form.label :date, class: 'form-label' %>
-      <%= form.date_field :date, class: 'form-control' %>
+      <div class="field">
+        <%= form.label :date_and_time, class: 'form-label' %>
+         <%= form.datetime_field :date_and_time %>
+      </div>
     </div>
 
     <div class="form-group">
@@ -20,9 +32,9 @@
       <%= form.text_area :comments, class: 'form-control' %>
     </div>
 
-    <%= form.submit 'Create Activity', class: 'btn-primary' %>
-    <%= link_to 'Back to Activities', activities_path, class: 'btn-secondary' %>
-  <% end %>
+      <%= form.submit 'Create activity', class: 'btn-primary' %>
+  <%= link_to 'Back to Activities', activities_path, class: 'btn-secondary' %>
+<% end %>
 
   <ul>
 
