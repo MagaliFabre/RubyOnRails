@@ -1,10 +1,11 @@
 <!-- app/views/activities/show.html.erb -->
 <h1 class="activitytitle"><%= @activity.name %></h1>
 <table class="activity-table">
-  <tr>
-    <td>Date:</td>
-    <td><%= @activity.date %></td>
-  </tr>
+ <tr>
+  <td>Date:</td>
+  <td><%= @activity.date_and_time.strftime('%d-%m-%Y %Hh%M') if @activity.date_and_time%></td>
+</tr>
+
   <tr>
     <td>Duration:</td>
     <td><%= @activity.duration %> minutes</td>

@@ -84,7 +84,7 @@
         <% @activities.each do |activity| %>
           <tr>
             <td><%= link_to activity.name, activity_path(activity), class: 'linktitle' %></td>
-            <td class = link><%= link_to activity.date_and_time.strftime('%Y-%m-%d %H:%M:%S') if activity.date_and_time%></td>
+            <td><%= link_to activity.date_and_time.strftime('%d-%m-%Y %Hh%M'), activity_path(activity), class: 'link' if activity.date_and_time %></td>
             <td><%= link_to activity.comments, activity_path(activity), class: 'link' %></td>
             <td><%= link_to 'Modify', edit_activity_path(activity), class: 'link' %></td>
             <td>
@@ -104,9 +104,9 @@
 <style>
  .table-container {
     overflow-x: auto;
-    margin: 20px auto; /* Adjust margin as needed */
-    padding-bottom: 20px; /* Add space below the table */
-    max-width: 600px; /* Adjust max-width as needed */
+    margin: 20px auto; 
+    padding-bottom: 20px; 
+    max-width: 800px; 
   }
   .linktitle {
     text-decoration:none;
@@ -119,7 +119,7 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    background-color: #f4f4f4; /* Adjust background color */
+    background-color: #f4f4f4; 
   }
 
   .activity-table2 caption {
