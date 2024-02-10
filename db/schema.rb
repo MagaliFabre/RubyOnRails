@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_13_233103) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_04_192508) do
   create_table "activities", force: :cascade do |t|
-    t.integer "userid"
+    t.integer "user_id"
     t.string "name"
-    t.datetime "date"
+    t.datetime "date_and_time"
     t.text "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -22,7 +22,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_13_233103) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "last_name", default: "", null:false
+    t.string "last_name", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
